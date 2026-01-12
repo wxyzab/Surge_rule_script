@@ -1,0 +1,15 @@
+# 内容：Apple Intelligence 核心服务
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-livephotoskit.com
+DOMAIN-SUFFIX,apzones.com
+DOMAIN-SUFFIX,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN,proxy-api.apple-cloudkit.com
+DOMAIN-SUFFIX,api-glb-sea.smoot.apple.com
+DOMAIN-SUFFIX,siri-read.apple.com
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN-SUFFIX,weather-analytics-events.apple.com
+DOMAIN-SUFFIX,notes-analytics-events.apple.com
+DOMAIN-SUFFIX,api.apple-cloudkit.com
