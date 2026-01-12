@@ -1,21 +1,23 @@
 # Apple Intelligence
 # https://support.apple.com/en-us/101555
-DOMAIN-SUFFIX,apple-cloudkit.com
-DOMAIN-SUFFIX,apple-livephotoskit.com
-DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,cp4.cloudflare.com
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-livephotoskit.com
 DOMAIN,proxy-api.apple-cloudkit.com
 DOMAIN-SUFFIX,api.apple-cloudkit.com
 DOMAIN-SUFFIX,api-glb-sea.smoot.apple.com
 DOMAIN-SUFFIX,apzones.com
 DOMAIN-SUFFIX,mask.icloud.com
 DOMAIN-SUFFIX,mask-h2.icloud.com
-DOMAIN-SUFFIX,smoot.apple.com
 DOMAIN-SUFFIX,siri-read.apple.com
 DOMAIN-SUFFIX,siri.apple.com
-DOMAIN-SUFFIX,guzzoni.apple.com
 DOMAIN-SUFFIX,weather-analytics-events.apple.com
 DOMAIN-SUFFIX,notes-analytics-events.apple.com
-DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
-DOMAIN-SUFFIX,cp4.cloudflare.com
+
+
