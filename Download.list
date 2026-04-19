@@ -1,0 +1,31 @@
+# --- Mac P2P & 下载工具进程拦截 ---
+# 注意：Mac 下的进程名不带 .exe，且区分大小写
+PROCESS-NAME,aria2c
+PROCESS-NAME,fdm
+PROCESS-NAME,Folx
+PROCESS-NAME,Thunder
+PROCESS-NAME,Transmission
+PROCESS-NAME,uTorrent
+PROCESS-NAME,WebTorrent
+PROCESS-NAME,WebTorrent Helper
+PROCESS-NAME,qbittorrent
+PROCESS-NAME,BaiduNetdisk_mac
+PROCESS-NAME,Weiyun
+
+# --- BT / P2P 流量特征拦截 ---
+DOMAIN-SUFFIX,smtp
+DOMAIN-KEYWORD,aria2
+# 优化后的精准正则，拦截迅雷及各类 BT 协议特征 (性能消耗极低)
+URL-REGEX,(?i)(torrent|announce\.php\?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei|sandai|Thunder|XLLiveUD)
+
+# --- 邮件与杂项特征 ---
+# 原规则过于宽泛极易误杀正常包含 Subject 的网页，若非强需求建议注释掉
+# URL-REGEX,(?i)(Subject|HELO|SMTP)
+
+# --- 百度 / 360 / 杂项 ---
+# 修复了转义，去除了前后无意义的通配符
+URL-REGEX,(?i)(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map|)\.(baidu|n\.shifen)\.com
+URL-REGEX,(?i)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan)\.(cn|com)
+
+# --- Xbox ---
+URL-REGEX,(?i)assets\d+\.xboxlive\.(com|cn)
