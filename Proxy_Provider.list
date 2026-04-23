@@ -1,6 +1,13 @@
 #SSRDOG
-DOMAIN-KEYWORD,ssrdog
+DOMAIN-SUFFIX,ssrdog.com
+DOMAIN-SUFFIX,ssrdogapp.com
+DOMAIN-SUFFIX,ssrdog.dog
+DOMAIN-SUFFIX,ssrdog.vip
 
-#流量光机场
+#流量光
 DOMAIN-SUFFIX,llgjc.org
 DOMAIN-SUFFIX,llg01.com
+DOMAIN-SUFFIX,llg02.com
+DOMAIN-SUFFIX,llg03.com
+DOMAIN-SUFFIX,llgnew.com
+DOMAIN-SUFFIX,llgjc.org
