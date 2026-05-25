@@ -1,31 +1,59 @@
-# --- Mac P2P & 下载工具进程拦截 ---
-# 注意：Mac 下的进程名不带 .exe，且区分大小写
+# ============================================================
+# 中国大陆高宽带下载与 P2P/BT 分流规则
+# 作用：确保下载工具、网盘、游戏更新和 P2P/BT 流量走直连 (DIRECT)
+# ============================================================
+
+# --- Mac P2P & 下载工具进程分流 ---
+# 提示：macOS 下的进程名不带扩展名，且严格区分大小写
+PROCESS-NAME,qbittorrent
+PROCESS-NAME,Transmission
+PROCESS-NAME,BitComet
+PROCESS-NAME,uTorrent
+PROCESS-NAME,WebTorrent
+PROCESS-NAME,WebTorrentHelper
 PROCESS-NAME,aria2c
 PROCESS-NAME,fdm
 PROCESS-NAME,Folx
+PROCESS-NAME,Motrix
+PROCESS-NAME,persepolis
 PROCESS-NAME,Thunder
-PROCESS-NAME,Transmission
-PROCESS-NAME,uTorrent
-PROCESS-NAME,WebTorrent
-PROCESS-NAME,WebTorrent Helper
-PROCESS-NAME,qbittorrent
-PROCESS-NAME,BaiduNetdisk_mac
+PROCESS-NAME,ThunderDownloadService
+PROCESS-NAME,BaiduNetdisk
+PROCESS-NAME,AliyunDrive
 PROCESS-NAME,Weiyun
+PROCESS-NAME,DownloadService
+PROCESS-NAME,NetTransport
 
-# --- BT / P2P 流量特征拦截 ---
-DOMAIN-SUFFIX,smtp
+# --- BT / P2P 常见关键字与域名分流 (优先使用高效的树状匹配) ---
+DOMAIN-SUFFIX,qbittorrent.org
+DOMAIN-KEYWORD,tracker
+DOMAIN-KEYWORD,announce
+DOMAIN-KEYWORD,torrent
+DOMAIN-KEYWORD,peer_id
+DOMAIN-KEYWORD,info_hash
 DOMAIN-KEYWORD,aria2
-# 优化后的精准正则，拦截迅雷及各类 BT 协议特征 (性能消耗极低)
+DOMAIN-KEYWORD,thunder
+DOMAIN-KEYWORD,xunlei
+DOMAIN-KEYWORD,xlliveud
+DOMAIN-KEYWORD,sandai
+
+# --- 国内主流网盘及下载服务分流 ---
+DOMAIN-KEYWORD,yunpan
+DOMAIN-KEYWORD,baidupcs
+DOMAIN-KEYWORD,aliyundrive
+DOMAIN-SUFFIX,115.com
+DOMAIN-KEYWORD,lanzou
+DOMAIN-SUFFIX,quark.cn
+
+# --- BT / P2P 流量特征正则兜底 (匹配磁力、私网/公网 Tracker 等特征) ---
 URL-REGEX,(?i)(torrent|announce\.php\?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei|sandai|Thunder|XLLiveUD)
 
-# --- 邮件与杂项特征 ---
-# 原规则过于宽泛极易误杀正常包含 Subject 的网页，若非强需求建议注释掉
-# URL-REGEX,(?i)(Subject|HELO|SMTP)
+# --- Xbox & 微软下载分流 ---
+# 确保 Xbox 游戏下载与资源更新不走代理，跑满本地宽带
+DOMAIN-SUFFIX,xboxlive.com
+URL-REGEX,(?i)assets\d+\.xboxlive\.(com|cn)
 
-# --- 百度 / 360 / 杂项 ---
-# 修复了转义，去除了前后无意义的通配符
+# --- 百度 / 360 / 杂项本地直连 ---
+# 修复转义与语法，确保国内地图、API 及云盘服务高速直连
 URL-REGEX,(?i)(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map|)\.(baidu|n\.shifen)\.com
 URL-REGEX,(?i)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan)\.(cn|com)
-
-# --- Xbox ---
-URL-REGEX,(?i)assets\d+\.xboxlive\.(com|cn)
